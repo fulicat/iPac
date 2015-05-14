@@ -1,0 +1,34 @@
+{
+ "name" : "iPac",
+ "version" : "1.2.0",
+ "description" : "iPac  http://fulicat.com",
+ "background": {
+    "scripts": [ "bg.js" ]
+ },
+ "permissions": [
+    "background",
+    "background",
+    "browsingData",
+    "proxy",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "homepage_url": "http://fulicat.com",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": {
+      "19": "images/s32/ipac-s32.png",
+      "38": "images/s38/ipac-s38.png"
+    },
+    "default_title": "iPac"
+  },
+  "icons": {
+    "16": "images/s28/ipac-s28.png",
+    "32": "images/s32/ipac-s32.png",
+    "48": "images/s48/ipac-s48.png",
+    "128": "images/ipac.png"
+  }
+}

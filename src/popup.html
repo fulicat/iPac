@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>选项 - iPac</title>
+<meta name="description" content="iPac for Chrome">
+<meta name="keywords" content="iPac">
+<meta name="author" content="Jack.Chan">
+<style>
+html,body,ul,li{
+	margin:0;
+	padding:0;
+}
+
+ul,li{
+	list-style:none;
+}
+
+body{
+	padding:0;
+	min-width:400px;
+	font-size:14px;
+}
+body *{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+a{
+	outline:0;
+	color:#999;
+	text-decoration:none;
+}
+a:hover{
+	color:#07c;
+	text-decoration:underline;
+}
+
+.mxw300{
+	max-width:300px;
+}
+
+
+.hide,
+.hidden{
+	display:none!important;
+}
+
+.bar{
+	padding:10px;
+}
+.bar:after{
+	content:"\20";
+	clear:both;
+	display:block;
+	width:0;
+	height:0;
+}
+.bar ~ .page{
+	padding-top:0px!important;
+}
+
+.switcher-wrapper{
+	max-width:400px;
+	float:right;
+}
+.switcher-wrapper:after{
+	content:"\20";
+	clear:both;
+	display:block;
+	width:0;
+	height:0;
+}
+.switcher{
+	display:table;
+	width:100%;
+}
+.switcher>li{
+	display:table-cell;
+	width:1%;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	border:1px #ccc solid;
+	cursor:pointer;
+}
+.switcher>li+li{
+	border-left-width:0px;
+}
+.switcher>li:first-child{
+	border-radius:3px 0 0 3px;
+}
+.switcher>li:last-child{
+	border-radius:0 3px 3px 0;
+}
+.switcher>li:hover{
+	background-color:#eee;
+}
+.switcher>li.active{
+	color:#fff;
+	background-color:#30bd0f;
+	border-color:#30bd0f;
+}
+
+
+.pt10{
+	padding-top:10px;
+}
+.pt15{
+	padding-top:15px;
+}
+.pt20{
+	padding-top:20px;
+}
+
+.pull-left{
+	float:left;
+}
+.pull-right{
+	float:right;
+}
+
+
+.btn-group:before,
+.btn-group:after{
+	content:"\20";
+	display:block;
+	width:0;
+	height:0;
+}
+.btn-group{
+	
+}
+
+.btn{
+	font-size:14px;
+	border:1px #999 solid;
+	cursor:pointer;
+	overflow:visible;
+	padding:5px 10px;
+	border-radius:3px;
+	display:inline-block;
+	background-color:rgba(0,0,0, .1);
+}
+.btn:active{
+	background-color:rgba(0,0,0, .2);
+}
+.btn-blue{
+	outline:0;
+	color:#fff;
+	background-color:#00A0FB;
+	border-color:#0090E2;
+}
+.btn-blue:hover{
+	color:#eee;
+}
+.btn-blue:active{
+	background-color:#0090E2;
+}
+
+.btn-link{
+	outline:0;
+	border:0;
+	color:#0090E2;
+}
+.btn-link:hover{
+	text-decoration:underline;
+}
+.btn-link,
+.btn-link:active{
+	background:transparent;
+}
+
+.page{
+	display:none;
+	padding:10px;
+}
+.page:after{
+	content:"\20";
+	clear:both;
+	display:block;
+	width:0;
+	height:0;
+}
+.page.active{
+	display:block;
+}
+
+.text{
+	padding:0 5px;
+}
+
+.form-group{
+	padding-bottom:10px;
+}
+.form-control{
+	font-size:14px;
+	border:1px #ccc solid;
+	border-radius:3px;
+	padding:6px 5px;
+	outline:0;
+}
+.form-control.block{
+	display:block;
+	width:100%;
+}
+.form-control:focus{
+	border-color:#0090E2;
+	background-color:#f1f9fe;
+	box-shadow:0 0 3px rgba(13,109,208,.6);
+}
+.form-control.error{
+	border-color:#ec0404;
+	background-color:#fcebeb;
+	box-shadow:0 0 3px rgba(236,4,4,.6);
+}
+textarea.form-control{
+	min-height:260px;
+	overflow:auto;
+}
+p.copyright{
+	clear:both;
+	position:relative;
+	top:-25px;
+	margin-left:50%;
+	height:0;
+	margin:0;
+	padding:0 12px;
+	text-align:right;
+}
+p.copyright>a{
+	font-size:12px;
+	line-height:normal;
+	color:#999;
+}
+p.copyright>a + a{
+	margin-left:6px;
+}
+p.copyright>a:hover{
+	color:#07c;
+	text-decoration:underline;
+}
+
+.icon-external{
+	width:16px;
+	height:16px;
+	display:inline-block;
+	vertical-align:middle;
+	margin-left:4px;
+	margin-right:4px;
+	background-color:#fff;
+	border-radius:3px;
+	position:relative;
+}
+.icon-external:hover{
+	background-color: #0090E2;
+}
+.icon-external:hover:before,
+.icon-external:hover:after{
+	border-color:#fff;
+}
+
+.icon-external:before,
+.icon-external:after{
+	content:"\20";
+	width:6px;
+	height:6px;
+	display:block;
+	border:1px #333 solid;
+	position:absolute;
+}
+.icon-external:before{
+	left:2px;
+	bottom:2px;
+}
+.icon-external:after{
+	right:2px;
+	top:2px;
+}
+</style>
+<script type="text/javascript" src="zepto.min.js"></script>
+<script type="text/javascript" src="popup.js"></script>
+</head>
+<body>
+	<div class="bar bar-switcher">
+		<div class="switcher-wrapper">
+			<ul class="switcher" id="switcher">
+				<li class="system active" data-mode="system" title="系统默认">系统</li>
+				<li class="direct" data-mode="direct" title="直接连接">直连</li>
+				<li class="pac_url" data-mode="pac_url" title="PAC file">PAC文件</li>
+				<li class="pac_script" data-mode="pac_script" title="PAC script">PAC脚本<a class="icon-external" href="" target="_blank" title="新窗口打开"></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="page active" id="page-system">
+		<div class="text">系统默认</div>
+	</div>
+	<div class="page" id="page-direct">
+		<div class="text">直接连接</div>
+	</div>
+	<div class="page" id="page-pac_url">
+		<form id="form-pac_url">
+			<div class="form-group">
+				<input type="text" class="form-control block" id="pac_url" placeholder="http://example.com/proxy.pac" title="PAC文件地址" required>
+			</div>
+			<div class="btn-group">
+				<button type="submit" class="btn btn-blue" id="btn-save-pac_url">应用</button>
+			</div>
+		</form>
+	</div>
+	<div class="page" id="page-pac_script">
+		<form id="form-pac_script">
+			<div class="form-group">
+				<textarea class="form-control block" id="pac_script" placeholder="FindProxyForURL(url, host){ ... }" title="PAC脚本" required></textarea>
+			</div>
+			<div class="btn-group">
+				<button type="submit" class="btn btn-blue" id="btn-save_pac_script">应用</button>
+			</div>
+		</form>
+	</div>
+	<p class="copyright">
+		<a href="http://fulicat.com" target="_blank">fulicat.com</a>
+		<a href="javascript:void(0)" target="_blank" id="link-help">?</a>
+	</p>
+</body>
+</html>
